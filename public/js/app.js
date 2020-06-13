@@ -7,7 +7,10 @@ weatherForm.addEventListener('submit', (e) => {
   e.preventDefault()
   const location = search.value
 
+  messageOne.textContent = ''
+  messageTwo.textContent = ''
   messageOne.textContent = 'Loading...'
+
   fetch(`/weather?address=${location}`)
     .then(res => {
       messageOne.textContent = ''
@@ -20,7 +23,7 @@ weatherForm.addEventListener('submit', (e) => {
       } else {
         console.log(data)
         messageOne.textContent = data.location
-        messageTwo.textContent = `Temperature - ${data.forecast.temperature}. Feels like - ${data.forecast.feelsLike}`
+        messageTwo.textContent = `Temperature - ${data.forecast.temperature} °C. Feels like - ${data.forecast.feelsLike} °C`
       }
     })
 })
