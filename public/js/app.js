@@ -27,7 +27,7 @@ weatherForm.addEventListener('submit', (e) => {
       } else {
         console.log(data)
         messageOne.textContent = data.location
-        messageTwo.textContent = `Temperature - ${data.forecast.temperature} °C. Feels like - ${data.forecast.feelsLike} °C`
+        messageTwo.textContent = `Temperature - ${data.forecast.temperature} °C. Feels like - ${data.forecast.feelsLike} °C. ${data.forecast.humidity}% chance of rain. ${data.forecast.windSpeed}km/h wind speed.`
         weatherIcon.src = data.forecast.weatherIcon
         weatherIcon.style.display = 'block'
       }
